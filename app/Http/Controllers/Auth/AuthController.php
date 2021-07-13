@@ -49,18 +49,23 @@ class AuthController extends Controller {
 
     public function generateRandomUser(Request $request) {  
         set_time_limit(0);  
-        $user = new User();
-        // TODO: DB::beginTransaction();
-        for($r=0;$r<=1000;$r++) {
-            $user_data = array();
-            for($n =0; $n<=10000;$n++) {
-                $data = array('name'=>uniqid(),'email'=>uniqid().'@gmail.com','password'=>'Testing@123');
-                $user_data[] = $data;
-            }         
-            DB::table('users')->insert($user_data);
-        }
-        // TODO: need DB::commit()
-        echo "success"; die;     
+        try {
+            DB::beginTransaction();
+            $user = new User();
+            for($r=0;$r<=1000;$r++) {
+                $user_data = array();
+                for($n =0; $n<=10000;$n++) {
+                    $data = array('name'=>uniqid(),'email'=>uniqid().'@gmail.com','password'=>'Testing@123');
+                    $user_data[] = $data;
+                }         
+                DB::table('users')->insert($user_data);
+            }
+            DB::commit();
+            echo "success"; die;     
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        }    
     }
 
     public function postRegistration(Request $request) {  

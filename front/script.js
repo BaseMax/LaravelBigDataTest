@@ -105,6 +105,10 @@ const LoginPage = {
 	},
 	methods:{
 		submitForm() {
+			if(this.form.email === "" || this.form.password === "") {
+				alert("Please fill your email and password!")
+				return;
+			}
 			request(API.LOGIN, {
 				email: this.form.email,
 				password: this.form.password,

@@ -18,6 +18,7 @@ use App\Models\User;
 
 use Hash;
 use Faker\Generator as Faker;
+use DB;
 
 
 
@@ -47,15 +48,17 @@ class AuthController extends Controller {
     }
 
     public function generateRandomUser(Request $request) {  
-        set_time_limit(0);
+        set_time_limit(0);  
         $user = new User();
-        $user_data = array();
-        for($n =0; $n<=10000;$n++) {
-            $data = array('name'=>rand(),'email'=>rand().'@gmail.com','password'=>Hash::make('Testing@123'));
-            $user_data[] = $data;
+        for($r=0;$r<=1000;$r++) {
+            $user_data = array();
+            for($n =0; $n<=10000;$n++) {
+                $data = array('name'=>uniqid(),'email'=>uniqid().'@gmail.com','password'=>'Testing@123');
+                $user_data[] = $data;
+            }         
+            DB::table('users')->insert($user_data);
         }
-        User::insert($user_data);
-        echo "success"; die;
+        echo "success"; die;     
     }
 
     public function postRegistration(Request $request) {  

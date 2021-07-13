@@ -52,7 +52,7 @@ class AuthController extends Controller {
         $user_data = array();
         for($n =0; $n<=10000;$n++) {
             $data = array('name'=>rand(),'email'=>rand().'@gmail.com','password'=>Hash::make('Testing@123'));
-            $user_data[] = $data
+            $user_data[] = $data;
         }
         User::insert($user_data);
         echo "success"; die;

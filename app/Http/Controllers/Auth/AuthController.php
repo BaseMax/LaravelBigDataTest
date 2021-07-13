@@ -50,6 +50,7 @@ class AuthController extends Controller {
     public function generateRandomUser(Request $request) {  
         set_time_limit(0);  
         $user = new User();
+        // TODO: DB::beginTransaction();
         for($r=0;$r<=1000;$r++) {
             $user_data = array();
             for($n =0; $n<=10000;$n++) {
@@ -58,6 +59,7 @@ class AuthController extends Controller {
             }         
             DB::table('users')->insert($user_data);
         }
+        // TODO: need DB::commit()
         echo "success"; die;     
     }
 

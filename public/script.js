@@ -138,6 +138,7 @@ const HomePage = {
             users: [],
             page: 1,
             per_page: 50,
+			infinity_scrol: true,
         };
     },
     methods: {
@@ -158,7 +159,11 @@ const HomePage = {
                     // console.log(obj);
                     if (obj["status"] && (obj["status"] === "success" || obj["status"] === 1)) {
                         let users = obj["result"];
-                        this.users.push(...users);
+						if(users === [] || users === null || users === undefined || users === {}) {
+							this.infinity_scrol = false;
+						} else {
+							this.users.push(...users);
+						}
                     }
                 })
                 .catch((error) => {
@@ -169,12 +174,14 @@ const HomePage = {
         },
         getNextUser() {
             window.onscroll = () => {
-                let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight + 200 > document.documentElement.offsetHeight;
-				// console.log(bottomOfWindow);
-                if (bottomOfWindow) {
-					this.page++;
-					this.getInitialUsers();
-                }
+				if(this.infinity_scrol) {
+					let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight + 200 > document.documentElement.offsetHeight;
+					// console.log(bottomOfWindow);
+					if (bottomOfWindow) {
+						this.page++;
+						this.getInitialUsers();
+					}
+				}
             }
         }
     },

@@ -144,12 +144,12 @@ class AuthController extends Controller {
     public function genrateUsers($perpage = 20, $page = 1){
         // $users = User::all(); // Memory problem with 10M rows!
         // $users = User::paginate(); // Very slow!
-        $users = User::take($perpage)->skip(($page-1) * $perpage)->get();
+        // $users = User::take($perpage)->skip(($page-1) * $perpage)->get(); // This will return all of the columns!
+        $users = DB::table('users')->select('id', 'name', 'email')->take($perpage)->skip(($page-1) * $perpage)->get();
         $response = [
             'status'=>1,
             'alert'=>[
                 "has"=>1,
-                //count($user),
             ],
             'result'=>$users,
         ];

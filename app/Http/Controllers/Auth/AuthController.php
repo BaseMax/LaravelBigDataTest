@@ -141,21 +141,18 @@ class AuthController extends Controller {
     public function indexPage(){
         return view('index');
     }
-    public function genrateUsers(){
-        $user=User::all();
+    public function genrateUsers($perpage = 20, $page = 1){
+        // $users = User::all();
+        $users = User::paginate();
         $response = [
             'status'=>1,
             'alert'=>[
-            "has"=>count($user),
+                "has"=>1,
+                //count($user),
             ],
-            'result'=>[
-                $user
-            ]
-            
-        
-    ];
-
-    return response($response, 201);
+            'result'=>$users->items(),
+        ];
+        return response($response, 201);
     }
 
 }

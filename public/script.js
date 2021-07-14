@@ -83,11 +83,15 @@ const NotFoundComponent = {
 	},
 }
 
+const Logout = () => {
+	localStorage.removeItem("sid");
+	localStorage.removeItem("uid");
+	localStorage.clear();
+}
+
 const LogoutPage = {
 	mounted: function() {
-		localStorage.removeItem("sid");
-		localStorage.removeItem("uid");
-		localStorage.clear();
+		Logout();
 		this.$router.push("/login/");
 	},
 };
@@ -135,6 +139,12 @@ const HomePage = {
 			users: [],
 		};
 	},
+	methods: {
+		logout: function(event) {
+			Logout();
+			this.$router.push("/login/");
+		},
+	},
 	mounted: function() {
 		if(!CheckAuth()) {
 			this.$router.push("/login/");
@@ -147,11 +157,11 @@ const HomePage = {
 			}
 		})
 		.then((res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			let obj = res.data;
-			console.log(obj);
-			if(obj["status"] && obj["status"] === "success") {
-				let users = obj["users"];
+			// console.log(obj);
+			if(obj["status"] && (obj["status"] === "success" || obj["status"] === 1)) {
+				let users = obj["result"];
 				console.log(users);
 				this.users = users;
 			}

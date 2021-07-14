@@ -45,6 +45,24 @@
 
 Laravel internally support the **"Too Many Attempts"** error and not allow clients to send too many requests in a short period of time.
 
+### Challenge (time and curl)
+
+```
+$ time curl 'http://localhost:8000/api/users/50/98700/'   -H 'Connection: keep-alive'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"'   -H 'Accept: application/json, text/plain, */*'   -H 'X-XSRF-TOKEN: eyJpdiI6IkxITWpwdDZOZ2cvR3FLS1dYRjN3eEE9PSIsInZhbHVlIjoiRWg5UnlTU0J3aHVQbUtXSVhyMmZ0UDFlNXhlM2g1RTNKUXMzK0VtMlZza0FvRGxRQnl2MEZoWEVOM21vejhzTXZrL0ZMNlA2R3BmdGVUZkNQcWFqWW45VnJBSnZKU2Vta0RScmQvRGxUVklBK0V3UkpPSCt6SUVCSjEzemllVE8iLCJtYWMiOiI2MzUzMjUyZGY4ZjlkY2ZjYTQ0OWI0YWY4NWVmM2MyM2NjM2ZlMjFhMTUzYTgwNDQwZTA3NmNmMDA3ZGQwMGM1In0='   -H 'User-Sid: undefined'   -H 'User-Uid: undefined'   -H 'sec-ch-ua-mobile: ?0'   -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'   -H 'Sec-Fetch-Site: same-origin'   -H 'Sec-Fetch-Mode: cors'   -H 'Sec-Fetch-Dest: empty'   -H 'Referer: http://localhost:8000/spa/'   -H 'Accept-Language: en,fa;q=0.9'   -H 'Cookie: _ga=GA1.1.1153724868.1621997033; PHPSID=827472f9a32fd841553ac5ca; _ga_G5D9ZS72L5=GS1.1.1625411801.47.1.1625412299.0; _xsrf=2|2a17c7f5|f3db1a448e0eb035e9fdabbce3701cb5|1625575302; username-localhost-8888="2|1:0|10:1625576831|23:username-localhost-8888|44:NjMzNDZiZjViZGI1NGIwYTgyNzcxOTRhNmNhMTlkMTk=|bff975294e789ed5ae6412429533018bab32a305f46f67decc611cd746f525d9"; XSRF-TOKEN=eyJpdiI6IkxITWpwdDZOZ2cvR3FLS1dYRjN3eEE9PSIsInZhbHVlIjoiRWg5UnlTU0J3aHVQbUtXSVhyMmZ0UDFlNXhlM2g1RTNKUXMzK0VtMlZza0FvRGxRQnl2MEZoWEVOM21vejhzTXZrL0ZMNlA2R3BmdGVUZkNQcWFqWW45VnJBSnZKU2Vta0RScmQvRGxUVklBK0V3UkpPSCt6SUVCSjEzemllVE8iLCJtYWMiOiI2MzUzMjUyZGY4ZjlkY2ZjYTQ0OWI0YWY4NWVmM2MyM2NjM2ZlMjFhMTUzYTgwNDQwZTA3NmNmMDA3ZGQwMGM1In0%3D; laravel_session=eyJpdiI6InNmVXVNaXZtaExDdjU0bE9EY0gxSEE9PSIsInZhbHVlIjoid3lOaW9MWHNUU3lKK29oMTRWNVhkaktvTTBCNUh1RGdwNStCWVZ1ZWtDUzAwVXNRZFpCbHIydXRJOURLWDN0N1dVTDk0dWVvWko1WHg0QTBPeTB5clFMZXFVZ0NRRjREWlZ3ckFtVGVVcitCMU0wUUZxanVPUTlJYlRxeFRFSUoiLCJtYWMiOiJlZjY2ZWJjMjhjMjhmZGIyZWE4ZmNlYjY3NGI5OGEzYmE1M2UzMWVjNGQwOTI1NGI0NjNkMjlhMmMzNmMxNThiIn0%3D'   --compressed
+
+real	0m1.179s
+user	0m0.010s
+sys	0m0.004s
+
+real	0m0.983s
+user	0m0.003s
+sys	0m0.006s
+
+real	0m1.012s
+user	0m0.008s
+sys	0m0.007s
+```
+
 ## Preview screenshots
 
 ![Laravel vuejs big-data test dashboard](preview-dashboard.png)

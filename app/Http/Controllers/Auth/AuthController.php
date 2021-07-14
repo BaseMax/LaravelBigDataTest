@@ -156,4 +156,34 @@ class AuthController extends Controller {
         return response($response, 201);
     }
 
+    // public function get_listOfJobs($userId):
+    // {
+    //     $user = User::find($userId);
+    //     note: $user has a relationship with jobs.
+    //     $secondQuery = $user->jobs()->where('is_completed', true)
+    
+    //     if ($userId == 2) {
+    //         $query = $secondQuery->where('status', 1)->where('main', false);
+    //     } elseif ($userId == 3) {
+    //         $query = $secondQuery->where('status', 2)->where('main', true);
+    //     } else {
+    //         $query = $secondQuery->where('status', 0);
+    //     }
+    
+    //     $jobs = $query->get();
+    
+    //     foreach ($jobs as $job) {
+    //         $job->name = 'Name is ' . $job->title;
+    //         $job->providerList = [];
+    
+    //         // job can have multiple provider object
+    //         $job->providerList = array_map(function($provider) {
+    //             return $provider->first_name.' '. $provider->last_name;
+    //         }, $job->providers);
+    //         Mail::to($user->email)->send(new JobFechted('Fetched job id: ' . $job->id));
+    //     }
+    
+    //     return $jobs;
+    // }
+
 }

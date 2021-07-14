@@ -56,7 +56,6 @@ protected $middlewareGroups = [
 ];
 ```
 
-
 ### Challenge (time and curl)
 
 ```

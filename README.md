@@ -35,6 +35,16 @@
 
 ![Laravel: bigdata huge size in tables](preview-database.png)
 
+## Performance
+
+- POST: `/api/login/` ; 137.73ms Waiting
+- POST: `/api/users/50/1/` ; 75.08ms Waiting (Maybe database cache, since the first page is so useable)
+- POST: `/api/users/50/60/` ; 174.57ms Waiting
+
+### Func Facts
+
+Laravel internally support the **"Too Many Attempts"** error and not allow clients to send too many requests in a short period of time.
+
 ## Preview screenshots
 
 ![Laravel vuejs big-data test dashboard](preview-dashboard.png)

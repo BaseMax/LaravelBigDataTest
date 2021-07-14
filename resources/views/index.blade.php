@@ -96,6 +96,6 @@
 	</template>
 
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/combine/npm/vue@next,npm/vue-router@next,npm/axios@next"></script>
-	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="/script.js"></script>
 </body>
 </html>

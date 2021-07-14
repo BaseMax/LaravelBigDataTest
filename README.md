@@ -2,12 +2,16 @@
 
 ## Routes
 
-#### Web
+### Modern SPA Web (Vuejs version)
 
+- **GET:** http://127.0.0.1:8000/spa/
+
+#### Old Web
+
+- **GET:** http://127.0.0.1:8000/ (Will redirect to login page or dashboard if you are already has verifieh auth)
 - **GET:** http://127.0.0.1:8000/login
 - **GET:** http://127.0.0.1:8000/registration
 - **GET:** http://127.0.0.1:8000/dashboard
-- **GET:** http://127.0.0.1:8000/spa/
 - **GET:** http://127.0.0.1:8000/fakeuser/
 
 #### Web-Forms/Action

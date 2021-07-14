@@ -138,5 +138,21 @@ class AuthController extends Controller {
     public function indexPage(){
         return view('index');
     }
+    public function genrateUsers(){
+        $user=User::all();
+        $response = [
+            'status'=>1,
+            'alert'=>[
+            "has"=>count($user),
+            ],
+            'result'=>[
+                $user
+            ]
+            
+        
+    ];
+
+    return response($response, 201);
+    }
 
 }

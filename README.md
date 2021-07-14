@@ -1,5 +1,28 @@
 # Laravel Big Data Test
 
+## Routes
+
+#### Web
+
+- **GET:** http://127.0.0.1:8000/login
+- **GET:** http://127.0.0.1:8000/registration
+- **GET:** http://127.0.0.1:8000/dashboard
+- **GET:** http://127.0.0.1:8000/spa/
+- **GET:** http://127.0.0.1:8000/fakeuser/
+
+#### Web-Forms/Action
+
+- **GET:** http://127.0.0.1:8000/logout/
+- **POST:** http://127.0.0.1:8000/post-login
+- **POST:** http://127.0.0.1:8000/post-registration
+
+#### API
+
+- **POST:** http://127.0.0.1:8000/api/login/
+- **POST:** http://127.0.0.1:8000/api/users/
+- **POST:** http://127.0.0.1:8000/api/users/:how_many_user_you_want/
+- **POST:** http://127.0.0.1:8000/api/users/:per_page/:page_index/
+
 ![Laravel vuejs big-data test dashboard](preview-dashboard.png)
 
 ![Laravel vuejs big-data test sign-in login page](preview-login.png)

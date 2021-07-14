@@ -78,6 +78,40 @@ class AuthController extends Controller {
         $check = $this->create($data);
         return redirect("registration")->withSuccess('Great! You have Successfully registered');
     }
+    public function login(Request $request) {
+        $fields = $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string'
+        ]);
+
+        // Check email
+        $user = User::where('email', $fields['email'])->first();
+
+        // Check password
+        if(!$user || !Hash::check($fields['password'], $user->password)) {
+            return response([
+                'message' => 'Bad creds'
+            ], 401);
+        }
+
+        $token = md5(rand(1, 10) . microtime());
+        ;
+        $response = [
+                'status'=>1,
+                'alert'=>[
+                "has"=>1,
+                "title"=>"Sign in",
+                "message"=>"Welcome"
+                ],
+                'result'=>[
+                    'jwt_token'=>$token
+                ]
+                
+            
+        ];
+
+        return response($response, 201);
+    }
 
 
     public function dashboard() {

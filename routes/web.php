@@ -15,7 +15,7 @@ use App\Http\Controllers\Auth\AuthController;
 */
 
 Route::get('/',[AuthController::class, 'dashboard']);
- 
+
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
@@ -24,4 +24,4 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('fakeuser', [AuthController::class, 'generateRandomUser'])->name('fakeuser');
-
+Route::get('spa',[AuthController::class,'indexPage'])->name('index');

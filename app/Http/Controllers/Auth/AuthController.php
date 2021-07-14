@@ -101,5 +101,8 @@ class AuthController extends Controller {
         Auth::logout();
         return Redirect('login');
     }
+    public function indexPage(){
+        return view('index');
+    }
 
 }

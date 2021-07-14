@@ -43,6 +43,16 @@
 - POST: `/api/users/50/1/` ; 75.08ms Waiting (Maybe database cache, since the first page is so useable)
 - POST: `/api/users/50/60/` ; 174.57ms Waiting
 
+
+#### PHP environment
+
+```
+$ php -v
+PHP 8.0.7 (cli) (built: Jun  2 2021 04:04:16) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v4.0.7, Copyright (c) Zend Technologies
+```
+
 ### Func Facts
 
 Laravel internally support the **"Too Many Attempts"** error and not allow clients to send too many requests in a short period of time.

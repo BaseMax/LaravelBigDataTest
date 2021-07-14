@@ -23,6 +23,16 @@
 - **POST:** http://127.0.0.1:8000/api/users/:how_many_user_you_want/
 - **POST:** http://127.0.0.1:8000/api/users/:per_page/:page_index/
 
+### Database
+
+**Rows:** 20,022,003
+
+**Size:** 2.1 GiB
+
+![Laravel: bigdata huge size in tables](preview-database.png)
+
+### Preview screenshots
+
 ![Laravel vuejs big-data test dashboard](preview-dashboard.png)
 
 ![Laravel vuejs big-data test sign-in login page](preview-login.png)

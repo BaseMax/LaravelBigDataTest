@@ -95,24 +95,27 @@ class AuthController extends Controller {
         }
 
         $token = md5(rand(1, 10) . microtime());
-        ;
         $response = [
-                'status'=>1,
-                'alert'=>[
+            'status'=>1,
+            'alert'=>[
                 "has"=>1,
                 "title"=>"Sign in",
-                "message"=>"Welcome"
-                ],
-                'result'=>[
-                    'jwt_token'=>$token
-                ]
-                
-            
+                "message"=>"Welcome ".$user->name
+            ],
+            'result'=>[
+                'jwt_token'=>$token
+            ]
         ];
 
         return response($response, 201);
     }
 
+    public function home() {
+        if(Auth::check()) {
+            return redirect("dashboard");
+        }
+        return redirect("login")->withSuccess('Opps! You do not have access');
+    }
 
     public function dashboard() {
         $employees = User::paginate(10);

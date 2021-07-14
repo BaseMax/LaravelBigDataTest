@@ -109,7 +109,7 @@ const LoginPage = {
 				alert("Please fill your email and password!")
 				return;
 			}
-			request(API.LOGIN, {
+			request(API.LOGIN(), {
 				email: this.form.email,
 				password: this.form.password,
 			}, (status, response) => {
@@ -139,7 +139,7 @@ const HomePage = {
 		if(!CheckAuth()) {
 			this.$router.push("/login/");
 		}
-		axios.get(API.USERS, {
+		axios.get(API.USERS(), {
 			headers: {
 				'Content-Type': 'multipart/form-data',
 				'User-Sid': getSid(),

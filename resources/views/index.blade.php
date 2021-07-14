@@ -81,10 +81,10 @@
 				</thead>
 				<tbody>
 					<tr v-for="(item, key) in users">
-						<th scope="row">{{key}}</th>
+						{{-- <th scope="row">{{key}}</th>
 						<td>@{{item.username}}</td>
 						<td>{{item.name}}</td>
-						<td>{{item.email}}</td>
+						<td>{{item.email}}</td> --}}
 					</tr>
 				</tbody>
 			</table>

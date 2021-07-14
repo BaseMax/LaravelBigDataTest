@@ -142,15 +142,16 @@ class AuthController extends Controller {
         return view('index');
     }
     public function genrateUsers($perpage = 20, $page = 1){
-        // $users = User::all();
-        $users = User::paginate();
+        // $users = User::all(); // Memory problem with 10M rows!
+        // $users = User::paginate(); // Very slow!
+        $users = User::take($perpage)->skip(($page-1) * $perpage)->get();
         $response = [
             'status'=>1,
             'alert'=>[
                 "has"=>1,
                 //count($user),
             ],
-            'result'=>$users->items(),
+            'result'=>$users,
         ];
         return response($response, 201);
     }

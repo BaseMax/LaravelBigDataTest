@@ -45,6 +45,18 @@
 
 Laravel internally support the **"Too Many Attempts"** error and not allow clients to send too many requests in a short period of time.
 
+> In `app/Http/Kernel.php` Laravel has a default throttle limit for all api routes. [\[s\]](https://stackoverflow.com/a/43058691/10096230)
+
+```php
+protected $middlewareGroups = [
+    ...
+    'api' => [
+        'throttle:60,1',
+    ],
+];
+```
+
+
 ### Challenge (time and curl)
 
 ```

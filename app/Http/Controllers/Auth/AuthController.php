@@ -138,7 +138,7 @@ class AuthController extends Controller {
     public function indexPage(){
         return view('index');
     }
-    public function genrateUsers(){
+    public function generateUsers(){
         $user=User::all();
         $response = [
             'status'=>1,
@@ -154,5 +154,38 @@ class AuthController extends Controller {
 
     return response($response, 201);
     }
+    public function generateUsersLimit($limit){
+        $user=User::paginate($limit);
+        $response = [
+            'status'=>1,
+            'alert'=>[
+            "has"=>count($user),
+            ],
+            'result'=>$user
+                
+            
+            
+        
+    ];
+
+    return response($response, 201);
+    }
+    public function generateUsersLimitPage($limit,$pageNo){
+        $user=User::paginate($limit,['*'],'page',$pageNo);
+        $response = [
+            'status'=>1,
+            'alert'=>[
+            "has"=>count($user),
+            ],
+            'result'=>$user
+                
+            
+            
+        
+    ];
+
+    return response($response, 201);
+    }
+    
 
 }

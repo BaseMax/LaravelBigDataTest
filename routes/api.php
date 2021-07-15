@@ -19,4 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/users', [AuthController::class, 'genrateUsers']);
+Route::get('/users', [AuthController::class, 'generateUsers']);
+Route::get('/users/{limit}', [AuthController::class, 'generateUsersLimit']);
+Route::get('/users/{limit}/{pageNo}', [AuthController::class, 'generateUsersLimitPage']);

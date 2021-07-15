@@ -29,6 +29,18 @@
 - **POST:** http://127.0.0.1:8000/api/users/:how_many_user_you_want/
 - **POST:** http://127.0.0.1:8000/api/users/:per_page/:page_index/
 
+### Own artisan commands
+
+- Get list of all users and send an email to admin:
+```
+php artisan user:fetch
+```
+
+- Insert +20M fake user data/rows:
+```
+php artisan user:fake
+```
+
 ## Database
 
 **Rows:** 20,022,003

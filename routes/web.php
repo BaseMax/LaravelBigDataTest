@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ Route::get('/dashboard', [AuthController::class, 'dashboard']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/fakeuser', [AuthController::class, 'generateRandomUser'])->name('fakeuser');
 Route::get('/spa',[AuthController::class,'indexPage'])->name('index');
+Route::get('/send-mail',[MailController::class,'sendMail'])->name('mail');

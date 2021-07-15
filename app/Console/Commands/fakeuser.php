@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\User;
 use Illuminate\Console\Command;
 
 class fakeuser extends Command
@@ -11,7 +12,7 @@ class fakeuser extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'user:fake';
 
     /**
      * The console command description.
@@ -37,6 +38,7 @@ class fakeuser extends Command
      */
     public function handle()
     {
+        User::factory()->create();
         return 0;
     }
 }

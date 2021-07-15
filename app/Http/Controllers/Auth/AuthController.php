@@ -47,21 +47,18 @@ class AuthController extends Controller {
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
 
-    public function generateRandomUser() {  
-        set_time_limit(0);  
+    public function generateRandomUser() {
+        set_time_limit(0);
         try {
             DB::beginTransaction();
-            $user = new User();
             for($r=0;$r<=1000;$r++) {
-                $user_data = array();
                 for($n =0; $n<=10000;$n++) {
                     $data = array('name'=>uniqid(),'email'=>uniqid().'@gmail.com','password'=>'Testing@123');
-                    $user_data[] = $data;
-                }         
-                DB::table('users')->insert($user_data);
+                    DB::table('users')->insert($data);
+                }
             }
             DB::commit();
-            echo "success"; die;     
+            echo "success"; die;
         } catch (\Exception $e) {
             DB::rollback();
             throw $e;

@@ -1,6 +1,6 @@
 @extends('layout')
 
-  
+
 
 @section('content')
 
@@ -44,7 +44,7 @@
 
             <div class="d-flex justify-content-center">
                 {!! $employees->links() !!}
-            </div>  
+            </div>
 
         </div>
 

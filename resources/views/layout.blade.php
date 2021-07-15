@@ -12,7 +12,7 @@
 
         @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
-  
+
 
         body{
 
@@ -94,7 +94,7 @@
 
 <body>
 
-    
+
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
 
@@ -108,7 +108,7 @@
 
         </button>
 
-   
+
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -140,7 +140,7 @@
 
             </ul>
 
-  
+
 
         </div>
 
@@ -148,11 +148,11 @@
 
 </nav>
 
-  
+
 
 @yield('content')
 
-     
+
 
 </body>
 

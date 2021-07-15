@@ -6,28 +6,28 @@
 
 ### Modern SPA Web (Vuejs version)
 
-- **GET:** http://127.0.0.1:8000/spa/
+-   **GET:** http://127.0.0.1:8000/spa/
 
 #### Old Web
 
-- **GET:** http://127.0.0.1:8000/ (Will redirect to login page or dashboard if you are already has verifieh auth)
-- **GET:** http://127.0.0.1:8000/login
-- **GET:** http://127.0.0.1:8000/registration
-- **GET:** http://127.0.0.1:8000/dashboard
-- **GET:** http://127.0.0.1:8000/fakeuser/
+-   **GET:** http://127.0.0.1:8000/ (Will redirect to login page or dashboard if you are already has verifieh auth)
+-   **GET:** http://127.0.0.1:8000/login
+-   **GET:** http://127.0.0.1:8000/registration
+-   **GET:** http://127.0.0.1:8000/dashboard
+-   **GET:** http://127.0.0.1:8000/fakeuser/
 
 #### Web-Forms/Action
 
-- **GET:** http://127.0.0.1:8000/logout/
-- **POST:** http://127.0.0.1:8000/post-login
-- **POST:** http://127.0.0.1:8000/post-registration
+-   **GET:** http://127.0.0.1:8000/logout/
+-   **POST:** http://127.0.0.1:8000/post-login
+-   **POST:** http://127.0.0.1:8000/post-registration
 
 #### API
 
-- **POST:** http://127.0.0.1:8000/api/login/
-- **POST:** http://127.0.0.1:8000/api/users/
-- **POST:** http://127.0.0.1:8000/api/users/:how_many_user_you_want/
-- **POST:** http://127.0.0.1:8000/api/users/:per_page/:page_index/
+-   **POST:** http://127.0.0.1:8000/api/login/
+-   **POST:** http://127.0.0.1:8000/api/users/
+-   **POST:** http://127.0.0.1:8000/api/users/:how_many_user_you_want/
+-   **POST:** http://127.0.0.1:8000/api/users/:per_page/:page_index/
 
 ### Own artisan commands
 
@@ -51,10 +51,9 @@ php artisan user:fake
 
 ## Performance
 
-- POST: `/api/login/` ; 137.73ms Waiting
-- POST: `/api/users/50/1/` ; 75.08ms Waiting (Maybe database cache, since the first page is so useable)
-- POST: `/api/users/50/60/` ; 174.57ms Waiting
-
+-   POST: `/api/login/` ; 137.73ms Waiting
+-   POST: `/api/users/50/1/` ; 75.08ms Waiting (Maybe database cache, since the first page is so useable)
+-   POST: `/api/users/50/60/` ; 174.57ms Waiting
 
 #### PHP environment
 
@@ -108,7 +107,7 @@ sys	0m0.007s
 
 ![Laravel blade big-data test register page](preview-blade-register.png)
 
-----------
+---
 
 ## Laravel
 
@@ -125,13 +124,13 @@ sys	0m0.007s
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -147,17 +146,17 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 #### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+-   **[Vehikl](https://vehikl.com/)**
+-   **[Tighten Co.](https://tighten.co)**
+-   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+-   **[64 Robots](https://64robots.com)**
+-   **[Cubet Techno Labs](https://cubettech.com)**
+-   **[Cyber-Duck](https://cyber-duck.co.uk)**
+-   **[Many](https://www.many.co.uk)**
+-   **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+-   **[DevSquad](https://devsquad.com)**
+-   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+-   **[OP.GG](https://op.gg)**
 
 ### Contributing
 

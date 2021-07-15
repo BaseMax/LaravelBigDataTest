@@ -26,7 +26,7 @@ class AuthController extends Controller {
 
     public function index() {
         return view('auth.login');
-    }  
+    }
 
 
     public function registration() {
@@ -62,10 +62,10 @@ class AuthController extends Controller {
         } catch (\Exception $e) {
             DB::rollback();
             throw $e;
-        }    
+        }
     }
 
-    public function postRegistration(Request $request) {  
+    public function postRegistration(Request $request) {
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -158,7 +158,7 @@ class AuthController extends Controller {
     //     $user = User::find($userId);
     //     note: $user has a relationship with jobs.
     //     $secondQuery = $user->jobs()->where('is_completed', true)
-    
+
     //     if ($userId == 2) {
     //         $query = $secondQuery->where('status', 1)->where('main', false);
     //     } elseif ($userId == 3) {
@@ -166,20 +166,20 @@ class AuthController extends Controller {
     //     } else {
     //         $query = $secondQuery->where('status', 0);
     //     }
-    
+
     //     $jobs = $query->get();
-    
+
     //     foreach ($jobs as $job) {
     //         $job->name = 'Name is ' . $job->title;
     //         $job->providerList = [];
-    
+
     //         // job can have multiple provider object
     //         $job->providerList = array_map(function($provider) {
     //             return $provider->first_name.' '. $provider->last_name;
     //         }, $job->providers);
     //         Mail::to($user->email)->send(new JobFechted('Fetched job id: ' . $job->id));
     //     }
-    
+
     //     return $jobs;
     // }
 

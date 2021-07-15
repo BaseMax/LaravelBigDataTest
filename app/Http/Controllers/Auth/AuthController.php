@@ -47,7 +47,7 @@ class AuthController extends Controller {
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
 
-    public function generateRandomUser(Request $request) {  
+    public function generateRandomUser() {  
         set_time_limit(0);  
         try {
             DB::beginTransaction();

@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Models\User;
 use Illuminate\Console\Command;
 
@@ -38,7 +39,7 @@ class fakeuser extends Command
      */
     public function handle()
     {
-        User::factory()->create();
+        (new AuthController())->generateRandomUser();
         return 0;
     }
 }

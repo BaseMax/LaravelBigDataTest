@@ -3,6 +3,10 @@
 # yamllint --strict -c .github/linters/.yaml-lint.yml .
 extends: default
 
+# skip everything ignored by .gitignore
+ignore: |
+  /vendor/
+
 rules:
   document-start: disable
   line-length: disable

@@ -6,28 +6,28 @@
 
 ### Modern SPA Web (Vuejs version)
 
--   **GET:** http://127.0.0.1:8000/spa/
+-   **GET:** [http://127.0.0.1:8000/spa/](http://127.0.0.1:8000/spa/)
 
 #### Old Web
 
--   **GET:** http://127.0.0.1:8000/ (Will redirect to login page or dashboard if you are already has verifieh auth)
--   **GET:** http://127.0.0.1:8000/login
--   **GET:** http://127.0.0.1:8000/registration
--   **GET:** http://127.0.0.1:8000/dashboard
--   **GET:** http://127.0.0.1:8000/fakeuser/
+-   **GET:** [http://127.0.0.1:8000/](http://127.0.0.1:8000/) (Will redirect to login page or dashboard if you are already has verifieh auth)
+-   **GET:** [http://127.0.0.1:8000/login](http://127.0.0.1:8000/login)
+-   **GET:** [http://127.0.0.1:8000/registration](http://127.0.0.1:8000/registration)
+-   **GET:** [http://127.0.0.1:8000/dashboard](http://127.0.0.1:8000/dashboard)
+-   **GET:** [http://127.0.0.1:8000/fakeuser/](http://127.0.0.1:8000/fakeuser/)
 
 #### Web-Forms/Action
 
--   **GET:** http://127.0.0.1:8000/logout/
--   **POST:** http://127.0.0.1:8000/post-login
--   **POST:** http://127.0.0.1:8000/post-registration
+-   **GET:** [http://127.0.0.1:8000/logout/](http://127.0.0.1:8000/logout/)
+-   **POST:** [http://127.0.0.1:8000/post-login](http://127.0.0.1:8000/post-login)
+-   **POST:** [http://127.0.0.1:8000/post-registration](http://127.0.0.1:8000/post-registration)
 
 #### API
 
--   **POST:** http://127.0.0.1:8000/api/login/
--   **POST:** http://127.0.0.1:8000/api/users/
--   **POST:** http://127.0.0.1:8000/api/users/:how_many_user_you_want/
--   **POST:** http://127.0.0.1:8000/api/users/:per_page/:page_index/
+-   **POST:** [http://127.0.0.1:8000/api/login/](http://127.0.0.1:8000/api/login/)
+-   **POST:** [http://127.0.0.1:8000/api/users/](http://127.0.0.1:8000/api/users/)
+-   **POST:** [http://127.0.0.1:8000/api/users/:how_many_user_you_want/](http://127.0.0.1:8000/api/users/:how_many_user_you_want/)
+-   **POST:** [http://127.0.0.1:8000/api/users/:per_page/:page_index/](http://127.0.0.1:8000/api/users/:per_page/:page_index/)
 
 ### Own artisan commands
 

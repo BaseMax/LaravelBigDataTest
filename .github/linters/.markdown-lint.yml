@@ -16,6 +16,9 @@ MD025: false
 # MD026/no-trailing-punctuation Trailing punctuation in heading
 MD026: false
 
+# MD030/list-marker-space Spaces after list markers
+MD030: false
+
 # MD033/no-inline-html Inline HTML
 MD033: false
 

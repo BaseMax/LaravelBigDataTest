@@ -1,6 +1,6 @@
 @extends('layout')
 
-  
+
 
 @section('content')
 
@@ -22,7 +22,7 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('success') }}
                         </div>
-                      @endif  
+                      @endif
 
                       <form action="{{ route('register.post') }}" method="POST">
 
@@ -46,7 +46,7 @@
 
                           </div>
 
-  
+
 
                           <div class="form-group row">
 
@@ -66,7 +66,7 @@
 
                           </div>
 
-  
+
 
                           <div class="form-group row">
 
@@ -86,7 +86,7 @@
 
                           </div>
 
-  
+
 
                           <div class="form-group row">
 
@@ -106,7 +106,7 @@
 
                           </div>
 
-  
+
 
                           <div class="col-md-6 offset-md-4">
 
@@ -120,7 +120,7 @@
 
                       </form>
 
-                        
+
 
                   </div>
 

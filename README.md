@@ -31,12 +31,14 @@
 
 ### Own artisan commands
 
-- Get list of all users and send an email to admin:
+-   Get list of all users and send an email to admin:
+
 ```
 php artisan user:fetch
 ```
 
-- Insert +20M fake user data/rows:
+-   Insert +20M fake user data/rows:
+
 ```
 php artisan user:fake
 ```

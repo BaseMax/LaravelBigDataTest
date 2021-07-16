@@ -37,3 +37,11 @@ repos:
         exclude: ^\.github/.*$
         types: [markdown]
         files: \.(md|mdown|markdown)$
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.26.1
+    hooks:
+      - id: yamllint
+        name: Check YAML files with yamllint
+        entry: yamllint --strict -c .github/linters/.yaml-lint.yml .
+        types: [yaml]
+        files: \.(yml|yaml)$

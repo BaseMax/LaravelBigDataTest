@@ -28,3 +28,12 @@ repos:
     hooks:
       - id: prettier
         name: Format files with prettier
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.27.1
+    hooks:
+      - id: markdownlint
+        name: Run markdownlint
+        entry: markdownlint -c .github/linters/.markdown-lint.yml .
+        exclude: ^\.github/.*$
+        types: [markdown]
+        files: \.(md|mdown|markdown)$

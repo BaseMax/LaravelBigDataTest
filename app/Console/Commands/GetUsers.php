@@ -11,14 +11,14 @@ class GetUsers extends Command
      *
      * @var string
      */
-    protected $signature = 'user:gets';
+    protected $signature = "user:gets";
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Get list of all users';
+    protected $description = "Get list of all users";
 
     /**
      * Create a new command instance.

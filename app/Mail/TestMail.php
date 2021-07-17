@@ -18,7 +18,7 @@ class TestMail extends Mailable
      */
     public function __construct($mail)
     {
-        $this->mail=$mail;
+        $this->mail = $mail;
     }
 
     /**
@@ -28,6 +28,6 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from Admin')->view('email');
+        return $this->subject("Mail from Admin")->view("email");
     }
 }

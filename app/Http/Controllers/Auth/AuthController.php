@@ -1,10 +1,6 @@
 <?php
 
-
-
 namespace App\Http\Controllers\Auth;
-
-
 
 use App\Http\Controllers\Controller;
 
@@ -20,135 +16,160 @@ use Hash;
 use Faker\Generator as Faker;
 use DB;
 
-
-
-class AuthController extends Controller {
-
-    public function index() {
-        return view('auth.login');
+class AuthController extends Controller
+{
+    public function index()
+    {
+        return view("auth.login");
     }
 
-
-    public function registration() {
-        return view('auth.registration');
+    public function registration()
+    {
+        return view("auth.registration");
     }
 
-
-    public function postLogin(Request $request) {
+    public function postLogin(Request $request)
+    {
         $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+            "email" => "required",
+            "password" => "required",
         ]);
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only("email", "password");
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-            ->withSuccess('You have Successfully loggedin');
+            return redirect()
+                ->intended("dashboard")
+                ->withSuccess("You have Successfully loggedin");
         }
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return redirect("login")->withSuccess(
+            "Oppes! You have entered invalid credentials"
+        );
     }
 
-    public function generateRandomUser() {
+    public function generateRandomUser()
+    {
         set_time_limit(0);
         try {
             DB::beginTransaction();
-            for($r=0;$r<=1000;$r++) {
-                for($n =0; $n<=10000;$n++) {
-                    $data = array('name'=>uniqid(),'email'=>uniqid().'@gmail.com','password'=>'Testing@123');
-                    DB::table('users')->insert($data);
+            for ($r = 0; $r <= 1000; $r++) {
+                for ($n = 0; $n <= 10000; $n++) {
+                    $data = [
+                        "name" => uniqid(),
+                        "email" => uniqid() . "@gmail.com",
+                        "password" => "Testing@123",
+                    ];
+                    DB::table("users")->insert($data);
                 }
             }
             DB::commit();
-            echo "success"; die;
+            echo "success";
+            die();
         } catch (\Exception $e) {
             DB::rollback();
             throw $e;
         }
     }
 
-    public function postRegistration(Request $request) {
+    public function postRegistration(Request $request)
+    {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            "name" => "required",
+            "email" => "required|email|unique:users",
+            "password" => "required|min:6",
         ]);
         $data = $request->all();
         $check = $this->create($data);
-        return redirect("registration")->withSuccess('Great! You have Successfully registered');
+        return redirect("registration")->withSuccess(
+            "Great! You have Successfully registered"
+        );
     }
-    public function login(Request $request) {
+    public function login(Request $request)
+    {
         $fields = $request->validate([
-            'email' => 'required|string',
-            'password' => 'required|string'
+            "email" => "required|string",
+            "password" => "required|string",
         ]);
 
         // Check email
-        $user = User::where('email', $fields['email'])->first();
+        $user = User::where("email", $fields["email"])->first();
 
         // Check password
-        if(!$user || !Hash::check($fields['password'], $user->password)) {
-            return response([
-                'message' => 'Bad creds'
-            ], 401);
+        if (!$user || !Hash::check($fields["password"], $user->password)) {
+            return response(
+                [
+                    "message" => "Bad creds",
+                ],
+                401
+            );
         }
 
         $token = md5(rand(1, 10) . microtime());
         $response = [
-            'status'=>1,
-            'alert'=>[
-                "has"=>1,
-                "title"=>"Sign in",
-                "message"=>"Welcome ".$user->name
+            "status" => 1,
+            "alert" => [
+                "has" => 1,
+                "title" => "Sign in",
+                "message" => "Welcome " . $user->name,
             ],
-            'result'=>[
-                'jwt_token'=>$token
-            ]
+            "result" => [
+                "jwt_token" => $token,
+            ],
         ];
 
         return response($response, 201);
     }
 
-    public function home() {
-        if(Auth::check()) {
+    public function home()
+    {
+        if (Auth::check()) {
             return redirect("dashboard");
         }
-        return redirect("login")->withSuccess('Opps! You do not have access');
+        return redirect("login")->withSuccess("Opps! You do not have access");
     }
 
-    public function dashboard() {
+    public function dashboard()
+    {
         $employees = User::paginate(10);
-        if(Auth::check()) {
-            return view('dashboard', compact('employees'));
+        if (Auth::check()) {
+            return view("dashboard", compact("employees"));
         }
-        return redirect("login")->withSuccess('Opps! You do not have access');
+        return redirect("login")->withSuccess("Opps! You do not have access");
     }
 
-    public function create(array $data) {
+    public function create(array $data)
+    {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password'])
+            "name" => $data["name"],
+            "email" => $data["email"],
+            "password" => Hash::make($data["password"]),
         ]);
     }
 
-    public function logout() {
+    public function logout()
+    {
         Session::flush();
         Auth::logout();
-        return Redirect('login');
+        return Redirect("login");
     }
-    public function indexPage(){
-        return view('index');
+    public function indexPage()
+    {
+        return view("index");
     }
-    public function genrateUsers($perpage = 20, $page = 1){
+    public function genrateUsers($perpage = 20, $page = 1)
+    {
         // $users = User::all(); // Memory problem with 10M rows!
         // $users = User::paginate(); // Very slow!
         // $users = User::take($perpage)->skip(($page-1) * $perpage)->get(); // This will return all of the columns!
-        $users = DB::table('users')->select('id', 'name', 'email')->take($perpage)->skip(($page-1) * $perpage)->get();
+        $users = DB::table("users")
+            ->select("id", "name", "email")
+            ->take($perpage)
+            ->skip(($page - 1) * $perpage)
+            ->get();
         $response = [
-            'status'=>1,
-            'alert'=>[
-                "has"=>1,
+            "status" => 1,
+            "alert" => [
+                "has" => 1,
             ],
-            'result'=>$users,
+            "result" => $users,
         ];
         return response($response, 201);
     }
@@ -182,5 +203,4 @@ class AuthController extends Controller {
 
     //     return $jobs;
     // }
-
 }

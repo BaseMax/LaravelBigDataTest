@@ -13,14 +13,14 @@ class FetchUsers extends Command
      *
      * @var string
      */
-    protected $signature = 'user:fetch';
+    protected $signature = "user:fetch";
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = "Command description";
 
     /**
      * Create a new command instance.
@@ -39,8 +39,8 @@ class FetchUsers extends Command
      */
     public function handle()
     {
-        $users=User::all();
-        $mail=(new MailController())->sendMail();
+        $users = User::all();
+        $mail = (new MailController())->sendMail();
         return 0;
     }
 }

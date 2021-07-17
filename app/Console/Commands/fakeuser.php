@@ -13,14 +13,14 @@ class fakeuser extends Command
      *
      * @var string
      */
-    protected $signature = 'user:fake';
+    protected $signature = "user:fake";
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = "Command description";
 
     /**
      * Create a new command instance.

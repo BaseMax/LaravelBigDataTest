@@ -2,6 +2,16 @@
 
 **PHP Larave:** Develop a test environment in Laravel with more than 20 Million user rows. (A project in blade laravel and another SPA in vue js infinite scroll)
 
+## Preview screenshots
+
+![Laravel vuejs big-data test dashboard](preview-dashboard.png)
+
+![Laravel vuejs big-data test sign-in login page](preview-login.png)
+
+![Laravel blade big-data test dashboard](preview-blade-dashboard.png)
+
+![Laravel blade big-data test register page](preview-blade-register.png)
+
 ## Routes
 
 ### Modern SPA Web (Vuejs version)
@@ -98,16 +108,6 @@ real	0m1.012s
 user	0m0.008s
 sys	0m0.007s
 ```
-
-## Preview screenshots
-
-![Laravel vuejs big-data test dashboard](preview-dashboard.png)
-
-![Laravel vuejs big-data test sign-in login page](preview-login.png)
-
-![Laravel blade big-data test dashboard](preview-blade-dashboard.png)
-
-![Laravel blade big-data test register page](preview-blade-register.png)
 
 ---
 

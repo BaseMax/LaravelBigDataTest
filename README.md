@@ -1,6 +1,6 @@
 # Laravel Big Data Test
 
-**PHP Larave:** Develop a test environment in Laravel with more than 20 Million user rows. (A project in blade laravel and another SPA in vue js infinite scroll)
+**PHP Laravel:** Develop a test environment in Laravel with more than 20 Million user rows. (A project in blade laravel and another SPA in vue js infinite scroll)
 
 ## Preview screenshots
 
